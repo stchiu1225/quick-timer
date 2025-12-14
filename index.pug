@@ -2,12 +2,22 @@ doctype html
 html
   head
     meta(charset="utf-8")
+    link(rel="preconnect",href="https://fonts.googleapis.com")
+    link(rel="preconnect",href="https://fonts.gstatic.com",crossorigin="true")
+    link(rel="stylesheet",href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap")
     link(rel="stylesheet",type="text/css",href="bootstrap3.min.css")
     link(rel="stylesheet",type="text/css",href="index.css")
     script(type="text/javascript",src="jquery-1.10.2.min.js")
     script(type="text/javascript",src="bootstrap3.min.js")
     script(type="text/javascript",src="index.js")
   body
+    .theme-switcher
+      span.mono 樣式
+      button.btn.btn-xs.btn-default.theme-btn(data-theme="track") 速度道
+      button.btn.btn-xs.btn-default.theme-btn(data-theme="dash") 儀表板
+      button.btn.btn-xs.btn-default.theme-btn(data-theme="pit") Pit wall
+      button.btn.btn-xs.btn-default.theme-btn(data-theme="night") 夜戰
+      button.btn.btn-xs.btn-default.theme-btn(data-theme="rally") 拉力
     #timer ????
     a#min60.btn.btn-info.fbtn(onclick="adjust(-60)") -60
     a#min10.btn.btn-info.fbtn(onclick="adjust(-10)") -10
