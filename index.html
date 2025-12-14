@@ -1,1 +1,40 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="bootstrap3.min.css"><link rel="stylesheet" type="text/css" href="index.css"><script type="text/javascript" src="jquery-1.10.2.min.js"></script><script type="text/javascript" src="bootstrap3.min.js"></script><script type="text/javascript" src="index.js"></script></head><body><div id="timer">????</div><a class="btn btn-info fbtn" id="min60" onclick="adjust(-60)">-60</a><a class="btn btn-info fbtn" id="min10" onclick="adjust(-10)">-10</a><a class="btn btn-primary" id="toggle" onclick="toggle()">RUN</a><a class="btn btn-warning" id="reset" onclick="reset()">RESET</a><a class="btn btn-default" id="hide" onclick="show()">&#xd60;</a><a class="btn btn-info fbtn" id="add10" onclick="adjust(10)">+10</a><a class="btn btn-info fbtn" id="add60" onclick="adjust(60)">+60</a><a class="btn btn-success fbtn" id="def10" onclick="adjust(0,10)">10 sec</a><a class="btn btn-success fbtn" id="def30" onclick="adjust(0,30)">30 sec</a><a class="btn btn-success fbtn" id="def60" onclick="adjust(0,60)">1 min</a><a class="btn btn-success fbtn" id="def180" onclick="adjust(0,180)">3 min</a><a class="btn btn-success fbtn" id="def300" onclick="adjust(0,300)">5 min</a><a class="btn btn-success fbtn" id="def600" onclick="adjust(0,600)">10 min</a><a class="btn btn-success fbtn" id="def900" onclick="adjust(0,900)">15 min</a><a class="btn btn-success fbtn" id="def1800" onclick="adjust(0,1800)">30 min</a></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap">
+    <link rel="stylesheet" type="text/css" href="bootstrap3.min.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap3.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+  </head>
+  <body>
+    <div class="theme-switcher">
+      <span class="mono">樣式</span>
+      <button class="btn btn-xs btn-default theme-btn" data-theme="track">速度道</button>
+      <button class="btn btn-xs btn-default theme-btn" data-theme="dash">儀表板</button>
+      <button class="btn btn-xs btn-default theme-btn" data-theme="pit">Pit wall</button>
+      <button class="btn btn-xs btn-default theme-btn" data-theme="night">夜戰</button>
+      <button class="btn btn-xs btn-default theme-btn" data-theme="rally">拉力</button>
+    </div>
+    <div id="timer">????</div>
+    <a id="min60" class="btn btn-info fbtn" onclick="adjust(-60)">-60</a>
+    <a id="min10" class="btn btn-info fbtn" onclick="adjust(-10)">-10</a>
+    <a id="toggle" class="btn btn-primary" onclick="toggle()">RUN</a>
+    <a id="reset" class="btn btn-warning" onclick="reset()">RESET</a>
+    <a id="hide" class="btn btn-default" onclick="show()">&#xd60;</a>
+    <a id="add10" class="btn btn-info fbtn" onclick="adjust(10)">+10</a>
+    <a id="add60" class="btn btn-info fbtn" onclick="adjust(60)">+60</a>
+    <a id="def10" class="btn btn-success fbtn" onclick="adjust(0,10)">10 sec</a>
+    <a id="def30" class="btn btn-success fbtn" onclick="adjust(0,30)">30 sec</a>
+    <a id="def60" class="btn btn-success fbtn" onclick="adjust(0,60)">1 min</a>
+    <a id="def180" class="btn btn-success fbtn" onclick="adjust(0,180)">3 min</a>
+    <a id="def300" class="btn btn-success fbtn" onclick="adjust(0,300)">5 min</a>
+    <a id="def600" class="btn btn-success fbtn" onclick="adjust(0,600)">10 min</a>
+    <a id="def900" class="btn btn-success fbtn" onclick="adjust(0,900)">15 min</a>
+    <a id="def1800" class="btn btn-success fbtn" onclick="adjust(0,1800)">30 min</a>
+  </body>
+</html>
