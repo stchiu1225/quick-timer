@@ -4,22 +4,156 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
+  color: #e6e6e6;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: moz-none;
   -ms-user-select: none;
   user-select: none;
+  background: #0b0b0b;
+}
+body {
+  --timer-bg: repeating-linear-gradient(45deg, #0b0b0b 0, #0b0b0b 10px, #111 10px, #111 20px);
+  --timer-border: #c8102e;
+  --timer-outline: #f7f7f7;
+  --timer-top: linear-gradient(90deg, #2e2e2e 0, #4f4f4f 10%, #c8102e 20%, #c8102e 80%, #4f4f4f 90%, #2e2e2e 100%);
+  --timer-glow: rgba(255, 255, 255, 0.6);
+  --timer-glow-2: rgba(255, 0, 0, 0.35);
+  background: radial-gradient(circle at 15% 20%, #1c1c1c, #0a0a0a 50%),
+    radial-gradient(circle at 75% 5%, #1a1a1a, #050505 40%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.04) 25%, transparent 25%) 0 0/32px 32px,
+    linear-gradient(315deg, rgba(255, 255, 255, 0.04) 25%, transparent 25%) 0 0/32px 32px,
+    #0c0c0c;
+}
+body.theme-cluster {
+  --timer-bg: radial-gradient(circle at 50% 35%, #101010 0, #0a0a0a 50%),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0, rgba(255, 255, 255, 0.05) 12px, transparent 12px, transparent 24px);
+  --timer-border: #c8102e;
+  --timer-outline: #f7f7f7;
+  --timer-top: linear-gradient(90deg, #3a3a3a 0, #5c5c5c 10%, #c8102e 20%, #c8102e 80%, #5c5c5c 90%, #3a3a3a 100%);
+  --timer-glow: rgba(255, 255, 255, 0.8);
+  --timer-glow-2: rgba(255, 64, 0, 0.4);
+}
+body.theme-carbon {
+  background: radial-gradient(circle at 30% 20%, #191919, #0b0b0b 55%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%) 0 0/20px 20px,
+    linear-gradient(315deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%) 0 0/20px 20px,
+    #060606;
+  --timer-bg: repeating-linear-gradient(45deg, #0a0a0a 0, #0a0a0a 9px, #131313 9px, #131313 18px);
+  --timer-border: #ff2d55;
+  --timer-outline: #1a1a1a;
+  --timer-top: linear-gradient(90deg, #1c1c1c 0, #2e2e2e 15%, #ff2d55 50%, #2e2e2e 85%, #1c1c1c 100%);
+  --timer-glow: rgba(255, 45, 85, 0.9);
+  --timer-glow-2: rgba(255, 130, 0, 0.45);
+}
+body.theme-neon {
+  background: radial-gradient(circle at 10% 10%, #121212, #050505 50%),
+    linear-gradient(90deg, rgba(32, 196, 255, 0.08) 1px, transparent 1px) 0 0/32px 32px,
+    linear-gradient(0deg, rgba(32, 196, 255, 0.08) 1px, transparent 1px) 0 0/32px 32px,
+    #000;
+  --timer-bg: linear-gradient(145deg, rgba(0, 255, 200, 0.08), rgba(0, 140, 255, 0.12)),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0, rgba(255, 255, 255, 0.04) 10px, transparent 10px, transparent 20px);
+  --timer-border: #00b8ff;
+  --timer-outline: #08293a;
+  --timer-top: linear-gradient(90deg, rgba(0, 184, 255, 0.9), rgba(0, 255, 200, 0.8));
+  --timer-glow: rgba(0, 255, 200, 0.9);
+  --timer-glow-2: rgba(0, 184, 255, 0.5);
+}
+body.theme-retro {
+  background: linear-gradient(135deg, #1a1a1a 0, #0c0c0c 55%),
+    radial-gradient(circle at 80% 20%, rgba(255, 160, 0, 0.15), transparent 50%),
+    #050505;
+  --timer-bg: repeating-linear-gradient(90deg, #0d0d0d 0, #0d0d0d 12px, #171717 12px, #171717 24px);
+  --timer-border: #f6a400;
+  --timer-outline: #3a2400;
+  --timer-top: linear-gradient(90deg, #3a3a3a 0, #4f4f4f 15%, #f6a400 50%, #4f4f4f 85%, #3a3a3a 100%);
+  --timer-glow: rgba(246, 164, 0, 0.85);
+  --timer-glow-2: rgba(255, 64, 0, 0.4);
 }
 #timer {
+  position: relative;
   width: 100%;
   height: 100%;
   line-height: 100%;
-  background: #000;
-  color: #fff;
+  background: var(--timer-bg);
+  color: #f8f8f8;
   text-align: center;
   font-weight: 700;
-  font-family: century gothic;
+  font-family: 'Orbitron', 'DS-Digital', 'Century Gothic', sans-serif;
+  letter-spacing: 4px;
+  text-shadow: 0 0 12px var(--timer-glow), 0 0 26px var(--timer-glow-2);
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.7), 0 0 32px rgba(0, 0, 0, 0.5);
+  border: 4px solid var(--timer-border);
+  outline: 6px solid var(--timer-outline);
+}
+#timer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 22%;
+  background: var(--timer-top);
+  opacity: 0.85;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+}
+#timer::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 70%;
+  height: 14px;
+  transform: translateX(-50%);
+  background: repeating-linear-gradient(
+      90deg,
+      #fafafa 0,
+      #fafafa 14px,
+      #151515 14px,
+      #151515 28px
+  );
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  opacity: 0.8;
+  pointer-events: none;
+}
+.theme-switch {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+}
+.theme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  min-width: 110px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #f5f5f5;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.4));
+  border: 2px solid #555;
+  border-radius: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.15s ease;
+  cursor: pointer;
+}
+.theme-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.55);
+  border-color: #b3b3b3;
+}
+.theme-btn.active {
+  border-color: var(--timer-border);
+  box-shadow: 0 0 10px var(--timer-border);
 }
 #hide,
 #toggle,
@@ -43,6 +177,28 @@ body {
   width: 170px;
   height: 44px;
   line-height: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.2s ease;
+}
+#hide:hover,
+#toggle:hover,
+#reset:hover,
+#min10:hover,
+#min60:hover,
+#add10:hover,
+#add60:hover,
+#def10:hover,
+#def30:hover,
+#def60:hover,
+#def180:hover,
+#def300:hover,
+#def600:hover,
+#def900:hover,
+#def1800:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.45);
 }
 #reset {
   margin-left: 50px;
